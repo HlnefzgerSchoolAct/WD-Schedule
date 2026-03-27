@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Schedule Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #3a3a3a;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+    .desktop-flex {
+      display: flex;
+      height: 100vh;
+      align-items: stretch;
+    }
+    .sidebar {
+      background: #232323;
+      color: #fff;
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 40px 0 0 0;
+      box-shadow: 2px 0 8px #2226;
+    }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.3em;
+      padding: 18px 32px;
+      width: 100%;
+      display: block;
+      transition: background 0.2s;
+    }
+    .sidebar a:hover {
+      background: #444;
+    }
+    .container {
+      margin: 60px 0 0 auto;
+      background: #acacac;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #545454;
+      max-width: 400px;
+      padding: 32px;
+      min-width: 340px;
+      text-align: center;
+    }
+    .time { font-size: 5em; margin-bottom: 10px; }
+    .period { font-size: 1.5em; margin-bottom: 10px; }
+    .countdown { font-size: 1.2em; color: #404040; }
+    .note { color: #888; font-size: 1em; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="desktop-flex">
+    <nav class="sidebar">
+      <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Email</a>
+      <a href="https://classroom.google.com/h" target="_blank">Classroom</a>
+      <a href="https://westdelaware.powerschool.com/guardian/home.html?_userTypeHint=student" target="_blank">Powerschool</a>
+    </nav>
+    <div class="container">
+      <div class="time" id="currentTime">--:--:--</div>
+      <div class="period" id="currentPeriod">Loading...</div>
+      <div class="countdown" id="countdown">--:--</div>
+      <div class="note" id="note"></div>
+    </div>
+  </div>
+  <script src="schedule.js"></script>
+</body>
+</html>
