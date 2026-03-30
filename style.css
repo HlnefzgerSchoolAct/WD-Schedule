@@ -1,0 +1,146 @@
+/* Exciting animated background */
+.background-decor {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, #232323 0%, #181818 60%, #ff9800 100%);
+  overflow: hidden;
+}
+
+.background-decor::before, .background-decor::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: float 12s ease-in-out infinite alternate;
+}
+.background-decor::before {
+  width: 420px; height: 420px;
+  left: 10vw; top: 10vh;
+  background: #ff9800;
+  opacity: 0.25;
+  animation-delay: 0s;
+}
+.background-decor::after {
+  width: 320px; height: 320px;
+  right: 8vw; bottom: 12vh;
+  background: #888;
+  opacity: 0.18;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-40px) scale(1.08); }
+}
+
+/*
+  Professional, modern, and responsive CSS for School Schedule Display
+  Author: Copilot (2026)
+*/
+
+:root {
+  --primary-bg: #181818;
+  --card-bg: #232323;
+  --accent: #ff9800;
+  --accent-light: #2d2d2d;
+  --text-main: #fff;
+  --text-secondary: #ccc;
+  --note: #ffb74d;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --radius: 18px;
+  --transition: 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 700px;
+  min-width: 400px;
+  width: 100%;
+  padding: 64px 48px 48px 48px;
+  text-align: center;
+  margin: 48px 24px;
+  transition: box-shadow var(--transition);
+  border: 2.5px solid var(--accent-light);
+  z-index: 1;
+}
+
+.container:hover {
+  box-shadow: 0 8px 32px rgba(255, 152, 0, 0.16);
+}
+
+.time {
+  font-size: 7em;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 24px;
+  letter-spacing: 3px;
+  transition: color var(--transition);
+  text-shadow: 0 4px 16px rgba(255,152,0,0.18);
+}
+
+.period {
+  font-size: 2.6em;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 22px;
+}
+
+.countdown {
+  font-size: 2em;
+  color: var(--accent);
+  background: var(--accent-light);
+  display: inline-block;
+  padding: 12px 36px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  border: 2px solid var(--accent);
+  box-shadow: 0 2px 12px rgba(255,152,0,0.10);
+}
+
+.note {
+  color: var(--note);
+  font-size: 1.5em;
+  margin-top: 36px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 16px 2vw 12px 2vw;
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .time {
+    font-size: 3em;
+  }
+  .period {
+    font-size: 1.5em;
+  }
+  .countdown {
+    font-size: 1.1em;
+    padding: 6px 12px;
+  }
+  .note {
+    font-size: 1em;
+  }
+}
